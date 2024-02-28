@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.sideMsgS {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #005c4b;
+}
+
+.sideMsgO {
+  position: absolute;
+  top: 0;
+  left: -8px;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #202C33;
+}
