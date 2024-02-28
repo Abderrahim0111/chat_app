@@ -10,7 +10,7 @@ env.config();
 
 app.use(express.json());
 app.use(cors({
-  origin: "*",
+  origin: "https://chatappdef.vercel.app",
   methods: ["POST", "GET", "PUT", "DELETE"],
   credentials: true
 }));
