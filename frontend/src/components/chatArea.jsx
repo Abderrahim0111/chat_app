@@ -4,9 +4,8 @@ import MessageSelf from "./messageSelf";
 import MessageOthers from "./messageOthers";
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
-import { api } from "../utils/end";
+import { api, apii } from "../utils/end";
 
-const ENDPOINT = "http://localhost:3000/";
 let socket;
 const ChatArea = ({ chatId, currentUser, chatName, conversation, setisChatArea }) => {
   const [allMessages, setallMessages] = useState([]);
@@ -15,7 +14,7 @@ const ChatArea = ({ chatId, currentUser, chatName, conversation, setisChatArea }
   const [socketConnectionStatus, setsocketConnectionStatus] = useState(false);
   //connect to socket
   useEffect(() => {
-    socket = io(ENDPOINT);
+    socket = io(apii);
     socket.emit("setup", currentUser);
     socket.on("connection", () => {
       setsocketConnectionStatus(!socketConnectionStatus);
